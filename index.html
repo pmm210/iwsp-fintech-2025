@@ -64,6 +64,11 @@
         th {
             background-color: #e8e8e8;
         }
+        img.layout {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script 
@@ -79,8 +84,7 @@
         }
 
         $(document).ready(function () {
-            $('#scheduleTable').DataTable();
-            $('#layoutTable').DataTable();
+            $('#posterTable').DataTable();
         });
     </script>
 </head>
@@ -91,20 +95,18 @@
     </header>
     <div class="container">
         <div class="tabs">
-            <div class="tab active" onclick="switchTab(0)">Student Schedule</div>
+            <div class="tab active" onclick="switchTab(0)">Poster Schedule</div>
             <div class="tab" onclick="switchTab(1)">Poster Layout</div>
+            <div class="tab" onclick="switchTab(2)">Assessment</div>
         </div>
         <div class="tab-content active">
-            <h2>Student Schedule</h2>
-            <table border="1" class="dataframe data-table" id="scheduleTable">
+            <h2>Poster Schedule</h2>
+            <table border="1" class="dataframe data-table" id="posterTable">
   <thead>
     <tr style="text-align: right;">
-      <th>IWSP Poster Layout</th>
-      <th>TimeSlot</th>
+      <th>Poster Position</th>
+      <th>Timeslot</th>
       <th>Student</th>
-      <th>Academic Supervisor</th>
-      <th>Industry Supervisor</th>
-      <th>Organization</th>
     </tr>
   </thead>
   <tbody>
@@ -112,659 +114,158 @@
       <td>1</td>
       <td>09:30 - 09:50</td>
       <td>JACKSON LIM</td>
-      <td>Zhang Zhengchen</td>
-      <td>Gideon Moses</td>
-      <td>STANDARD CHARTERED BANK</td>
     </tr>
     <tr>
       <td>2</td>
       <td>09:50 - 10:10</td>
       <td>MUHAMMAD AFIQ BIN SAMSUDIN</td>
-      <td>Zhang Zhengchen</td>
-      <td>Liat Lirase</td>
-      <td>STANDARD CHARTERED BANK</td>
     </tr>
     <tr>
       <td>3</td>
       <td>10:10 - 10:30</td>
       <td>ONG LEE XUAN</td>
-      <td>Zhang Zhengchen</td>
-      <td>Kesavan, Srinivasa Varadhan</td>
-      <td>STANDARD CHARTERED BANK</td>
     </tr>
     <tr>
       <td>4</td>
       <td>10:30 - 10:50</td>
       <td>TOH KE HAN</td>
-      <td>Tang Kim Yee</td>
-      <td>ONG CHIN HOCK</td>
-      <td>AIA SINGAPORE PRIVATE LIMITED</td>
     </tr>
     <tr>
       <td>5</td>
       <td>10:50 - 11:10</td>
       <td>PANG JIA CHENG</td>
-      <td>Ryan Fraser Kirwan</td>
-      <td>Kathy Chen</td>
-      <td>DBS BANK LTD.</td>
     </tr>
     <tr>
       <td>6</td>
       <td>09:30 - 09:50</td>
       <td>KEVIN TAN TINGFENG</td>
-      <td>Lin Shang-Wei</td>
-      <td>Darius Lim Ming Han</td>
-      <td>OVERSEA-CHINESE BANKING CORPORATION LIMITED</td>
     </tr>
     <tr>
       <td>7</td>
       <td>09:50 - 10:10</td>
       <td>MOK WEI EN, JABEZ</td>
-      <td>Lin Shang-Wei</td>
-      <td>Huai Xing Lim</td>
-      <td>Heritage Capital Management Pte Ltd</td>
     </tr>
     <tr>
       <td>8</td>
       <td>10:10 - 10:30</td>
       <td>TAN RI CHEE</td>
-      <td>Lin Shang-Wei</td>
-      <td>Roy Eng</td>
-      <td>OVERSEA-CHINESE BANKING CORPORATION LIMITED</td>
     </tr>
     <tr>
       <td>9</td>
       <td>10:30 - 10:50</td>
       <td>LIM JING RONG REUBEN</td>
-      <td>Ryan Fraser Kirwan</td>
-      <td>Kartik Mahadevan</td>
-      <td>AIA SINGAPORE PRIVATE LIMITED</td>
     </tr>
     <tr>
       <td>10</td>
       <td>11:10 - 11:30</td>
       <td>WONG SEBASTIAN</td>
-      <td>Purnima Murali Mohan</td>
-      <td>Chew Kok Leong</td>
-      <td>RESONA MERCHANT BANK ASIA LIMITED</td>
     </tr>
     <tr>
       <td>11</td>
       <td>09:30 - 09:50</td>
       <td>LEE RAY HAO</td>
-      <td>Purnima Murali Mohan</td>
-      <td>Wong Kai Wee</td>
-      <td>UNITED OVERSEAS BANK LIMITED</td>
     </tr>
     <tr>
       <td>12</td>
       <td>09:50 - 10:10</td>
       <td>LESHAWN CHAN KHIN MING</td>
-      <td>Purnima Murali Mohan</td>
-      <td>Tan Phaik Leong</td>
-      <td>UNITED OVERSEAS BANK LIMITED</td>
     </tr>
     <tr>
       <td>13</td>
       <td>10:30 - 10:50</td>
       <td>RUCHEL LEE WEN XUAN</td>
-      <td>Purnima Murali Mohan</td>
-      <td>Bhat, Krishna</td>
-      <td>STANDARD CHARTERED BANK</td>
     </tr>
     <tr>
       <td>14</td>
       <td>10:10 - 10:30</td>
       <td>PRAVEEN KUMAR S/O A JEYARAMAS</td>
-      <td>Purnima Murali Mohan</td>
-      <td>William Huang</td>
-      <td>STRAITSX PAYMENT SERVICES Pte Ltd</td>
     </tr>
     <tr>
       <td>15</td>
       <td>10:50 - 11:10</td>
       <td>TRISTAN RAJ SHANKAR</td>
-      <td>Purnima Murali Mohan</td>
-      <td>Wong Kai Wee</td>
-      <td>UNITED OVERSEAS BANK LIMITED</td>
     </tr>
     <tr>
       <td>24</td>
       <td>11:10 - 11:30</td>
       <td>TAY BOON KAI</td>
-      <td>Ryan Fraser Kirwan</td>
-      <td>Dilanka Gamage</td>
-      <td>DBS BANK LTD.</td>
     </tr>
     <tr>
       <td>17</td>
       <td>09:50 - 10:10</td>
       <td>JUSTIN CHONG</td>
-      <td>Ryan Fraser Kirwan</td>
-      <td>Saif Ghouse Mohideen</td>
-      <td>DBS BANK LTD.</td>
     </tr>
     <tr>
       <td>18</td>
       <td>10:10 - 10:30</td>
       <td>K MOHAMED SHARAAFAT</td>
-      <td>Ryan Fraser Kirwan</td>
-      <td>JIN HOO</td>
-      <td>FENCORE PTE. LTD.</td>
     </tr>
     <tr>
       <td>19</td>
       <td>09:30 - 09:50</td>
       <td>GOO JIA MING TRISTAN PAUL</td>
-      <td>Ryan Fraser Kirwan</td>
-      <td>JIN HOO</td>
-      <td>FENCORE PTE. LTD.</td>
     </tr>
     <tr>
       <td>20</td>
       <td>10:10 - 10:30</td>
       <td>SHANNON NG SHAO HUNG</td>
-      <td>Tang Kim Yee</td>
-      <td>ANTONIUS ISKANDAR</td>
-      <td>AIA SINGAPORE PRIVATE LIMITED</td>
+    </tr>
+    <tr>
+      <td>21</td>
+      <td>09:30 - 09:50</td>
+      <td>AXEL GOH</td>
+    </tr>
+    <tr>
+      <td>22</td>
+      <td>09:50 - 10:10</td>
+      <td>JEFFREY MAK CHEE HONG</td>
+    </tr>
+    <tr>
+      <td>23</td>
+      <td>10:50 - 11:10</td>
+      <td>TOH SHI XUAN</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>11:30 - 11:50</td>
+      <td>ZHANG HUAHUA</td>
+    </tr>
+    <tr>
+      <td>25</td>
+      <td>09:30 - 09:50</td>
+      <td>LAU YI LIN</td>
+    </tr>
+    <tr>
+      <td>26</td>
+      <td>10:10 - 10:30</td>
+      <td>MOHAMED IGSHAN BIN MOHAMED ALFIN</td>
+    </tr>
+    <tr>
+      <td>27</td>
+      <td>10:30 - 10:50</td>
+      <td>MUHAMMAD KHAIRIN BIN MOHD NOR</td>
+    </tr>
+    <tr>
+      <td>28</td>
+      <td>09:50 - 10:10</td>
+      <td>LEE JIAN YANG, DESMOND</td>
+    </tr>
+    <tr>
+      <td>29</td>
+      <td>11:30 - 11:50</td>
+      <td>YONG KAI JIE</td>
     </tr>
   </tbody>
 </table>
         </div>
         <div class="tab-content">
             <h2>Poster Layout</h2>
-            <table border="1" class="dataframe data-table" id="layoutTable">
-  <thead>
-    <tr style="text-align: right;">
-      <th>WINDOWS</th>
-      <th>Unnamed: 1</th>
-      <th>Unnamed: 2</th>
-      <th>Unnamed: 3</th>
-      <th>Unnamed: 4</th>
-      <th>Unnamed: 5</th>
-      <th>Unnamed: 6</th>
-      <th>Unnamed: 7</th>
-      <th>Unnamed: 8</th>
-      <th>Unnamed: 9</th>
-      <th>Unnamed: 10</th>
-      <th>Unnamed: 11</th>
-      <th>Unnamed: 12</th>
-      <th>Unnamed: 13</th>
-      <th>Unnamed: 14</th>
-      <th>Unnamed: 15</th>
-      <th>Unnamed: 16</th>
-      <th>Unnamed: 17</th>
-      <th>Unnamed: 18</th>
-      <th>Unnamed: 19</th>
-      <th>Unnamed: 20</th>
-      <th>Unnamed: 21</th>
-      <th>Unnamed: 22</th>
-      <th>Unnamed: 23</th>
-      <th>Unnamed: 24</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Poster 1</td>
-      <td>NaN</td>
-      <td>Poster 2</td>
-      <td>NaN</td>
-      <td>Poster 3</td>
-      <td>NaN</td>
-      <td>Poster 4</td>
-      <td>NaN</td>
-      <td>Poster 5</td>
-      <td>NaN</td>
-      <td>Poster 6</td>
-      <td>NaN</td>
-      <td>Poster 7</td>
-      <td>NaN</td>
-      <td>Poster 8</td>
-      <td>NaN</td>
-      <td>Poster 9</td>
-      <td>NaN</td>
-      <td>Poster 10</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>COFFEE STATION AND FOOD</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>walkway for supervisors</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Poster 11</td>
-      <td>NaN</td>
-      <td>Poster 12</td>
-      <td>NaN</td>
-      <td>Poster 13</td>
-      <td>NaN</td>
-      <td>Poster 14</td>
-      <td>NaN</td>
-      <td>Poster 15</td>
-      <td>NaN</td>
-      <td>Poster 16</td>
-      <td>NaN</td>
-      <td>Poster 17</td>
-      <td>NaN</td>
-      <td>Poster 18</td>
-      <td>NaN</td>
-      <td>Poster 19</td>
-      <td>NaN</td>
-      <td>Poster 20</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>walkway for supervisors</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Poster 21</td>
-      <td>NaN</td>
-      <td>Poster 22</td>
-      <td>NaN</td>
-      <td>Poster 23</td>
-      <td>NaN</td>
-      <td>Poster 24</td>
-      <td>NaN</td>
-      <td>Poster 25</td>
-      <td>NaN</td>
-      <td>Poster 26</td>
-      <td>NaN</td>
-      <td>Poster 27</td>
-      <td>NaN</td>
-      <td>Poster 28</td>
-      <td>NaN</td>
-      <td>Poster 29</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>Presentation timeslot</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>09:30 - 09:50</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>09:50 - 10:10</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>10:10 - 10:30</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>10:30 - 10:50</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>10:50 - 11:10</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>11:10 - 11:30</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>11:30 - 11:50</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>REGISTRATION DESK \nAND\n COW</td>
-      <td>NaN</td>
-      <td>1. attendance\n2. name label sticker\n3. Schedule sheet\n4. QR code printout for IWSP assessment System (3 - 5)</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <td>ENTRANCE</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
+            <img src="e678cb18-8e73-4444-9a64-891cd2f62218.png" class="layout" alt="Poster Layout Map" />
+        </div>
+        <div class="tab-content">
+            <h3>Industry Supervisor Assessment</h3>
+<h3>Academic Supervisor Assessment</h3>
+
         </div>
     </div>
 </body>
