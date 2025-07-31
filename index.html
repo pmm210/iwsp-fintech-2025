@@ -74,6 +74,29 @@
     <script 
       src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script>
+    function switchTab(tabIndex) {
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+        tabs.forEach((tab, i) => {
+            tab.classList.toggle('active', i === tabIndex);
+            contents[i].classList.toggle('active', i === tabIndex);
+        });
+    }
+
+    $(document).ready(function () {
+        $('#posterTable').DataTable();
+    });
+
+    function submitFeedback() {
+        const name = document.getElementById('name').value.trim();
+        const feedback = document.getElementById('feedback').value.trim();
+        if (name && feedback) {
+            document.getElementById('feedbackForm').reset();
+            document.getElementById('feedbackMessage').style.display = 'block';
+        }
+        return false; // prevent real form submission
+    }
+</script>
         function switchTab(tabIndex) {
             const tabs = document.querySelectorAll('.tab');
             const contents = document.querySelectorAll('.tab-content');
@@ -95,6 +118,11 @@
     </header>
     <div class="container">
         <div class="tabs">
+    <div class="tab active" onclick="switchTab(0)">Poster Schedule</div>
+    <div class="tab" onclick="switchTab(1)">Poster Layout</div>
+    <div class="tab" onclick="switchTab(2)">Assessment</div>
+    <div class="tab" onclick="switchTab(3)">Supervisor Feedback</div>
+</div>
             <div class="tab active" onclick="switchTab(0)">Poster Schedule</div>
             <div class="tab" onclick="switchTab(1)">Poster Layout</div>
             <div class="tab" onclick="switchTab(2)">Assessment</div>
@@ -286,5 +314,24 @@
 
         </div>
     </div>
+
+<div class="tab-content">
+    <h2>Feedback</h2>
+    <p>Please provide your name and feedback below. Submissions will be sent directly to the organiser.</p>
+    <form action="https://formsubmit.co/purnima.mohan@singaporetech.edu.sg" method="POST">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="IWSP Supervisor Feedback Submission">
+        <input type="hidden" name="_template" value="table">
+
+        <label for="name">Your Name:</label><br>
+        <input type="text" id="name" name="name" style="width: 100%; padding: 8px; margin-bottom: 10px;" required><br>
+
+        <label for="feedback">Your Feedback:</label><br>
+        <textarea id="feedback" name="feedback" rows="6" style="width: 100%; padding: 8px;" required></textarea><br><br>
+
+        <input type="submit" value="Submit Feedback" style="padding: 10px 20px;">
+    </form>
+</div>
+
 </body>
 </html>
