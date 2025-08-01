@@ -1,12 +1,12 @@
 
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>IWSP Poster Day - BAC (Fintech)</title>
-    <link rel="stylesheet" 
-          href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css"/>
-    <style>
+<meta charset="utf-8"/>
+<title>IWSP Poster Day - BAC (Fintech)</title>
+<link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<style>
         body {
             font-family: 'Segoe UI', sans-serif;
             background-color: #f4f6f7;
@@ -70,10 +70,9 @@
             border: 1px solid #ccc;
         }
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script 
-      src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script>
         function switchTab(tabIndex) {
             const tabs = document.querySelectorAll('.tab');
             const contents = document.querySelectorAll('.tab-content');
@@ -89,225 +88,211 @@
     </script>
 </head>
 <body>
-    <header>
-        <img src="SIT-logo.png" alt="SIT Logo" />
-        <h1>Welcome to BAC (Fintech) IWSP Poster Day @ SIT</h1>
-    </header>
-    <div class="container">
-        
+<header>
+<img alt="SIT Logo" src="SIT-logo.png"/>
+<h1>Welcome to BAC (Fintech) IWSP Poster Day @ SIT</h1>
+</header>
+<div class="container">
 <div class="tabs">
-    <div class="tab active" onclick="switchTab(0)">Poster Schedule</div>
-    <div class="tab" onclick="switchTab(1)">Poster Layout</div>
-    <div class="tab" onclick="switchTab(2)">Assessment</div>
-    <div class="tab" onclick="switchTab(3)">Feedback</div>
+<div class="tab active" onclick="switchTab(0)">Poster Schedule</div>
+<div class="tab" onclick="switchTab(1)">Poster Layout</div>
+<div class="tab" onclick="switchTab(2)">Assessment</div>
+<div class="tab" onclick="switchTab(3)">Find my way</div>
 </div>
-
-        
 <div class="tab-content active">
-    <h2>Poster Schedule</h2>
-    <table border="1" class="dataframe data-table" id="posterTable">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Poster Position</th>
-      <th>Timeslot</th>
-      <th>Student</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>09:30 - 09:50</td>
-      <td>JACKSON LIM</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>09:50 - 10:10</td>
-      <td>MUHAMMAD AFIQ BIN SAMSUDIN</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>10:10 - 10:30</td>
-      <td>ONG LEE XUAN</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>10:30 - 10:50</td>
-      <td>TOH KE HAN</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>10:50 - 11:10</td>
-      <td>PANG JIA CHENG</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>09:30 - 09:50</td>
-      <td>KEVIN TAN TINGFENG</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td>09:50 - 10:10</td>
-      <td>MOK WEI EN, JABEZ</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td>10:10 - 10:30</td>
-      <td>TAN RI CHEE</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>10:30 - 10:50</td>
-      <td>LIM JING RONG REUBEN</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td>11:10 - 11:30</td>
-      <td>WONG SEBASTIAN</td>
-    </tr>
-    <tr>
-      <td>11</td>
-      <td>09:30 - 09:50</td>
-      <td>LEE RAY HAO</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td>09:50 - 10:10</td>
-      <td>LESHAWN CHAN KHIN MING</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td>10:30 - 10:50</td>
-      <td>RUCHEL LEE WEN XUAN</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td>10:10 - 10:30</td>
-      <td>PRAVEEN KUMAR S/O A JEYARAMAS</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td>10:50 - 11:10</td>
-      <td>TRISTAN RAJ SHANKAR</td>
-    </tr>
-    <tr>
-      <td>24</td>
-      <td>11:10 - 11:30</td>
-      <td>TAY BOON KAI</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td>09:50 - 10:10</td>
-      <td>JUSTIN CHONG</td>
-    </tr>
-    <tr>
-      <td>18</td>
-      <td>10:10 - 10:30</td>
-      <td>K MOHAMED SHARAAFAT</td>
-    </tr>
-    <tr>
-      <td>19</td>
-      <td>09:30 - 09:50</td>
-      <td>GOO JIA MING TRISTAN PAUL</td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td>10:10 - 10:30</td>
-      <td>SHANNON NG SHAO HUNG</td>
-    </tr>
-    <tr>
-      <td>21</td>
-      <td>09:30 - 09:50</td>
-      <td>AXEL GOH</td>
-    </tr>
-    <tr>
-      <td>22</td>
-      <td>09:50 - 10:10</td>
-      <td>JEFFREY MAK CHEE HONG</td>
-    </tr>
-    <tr>
-      <td>23</td>
-      <td>10:50 - 11:10</td>
-      <td>TOH SHI XUAN</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td>11:30 - 11:50</td>
-      <td>ZHANG HUAHUA</td>
-    </tr>
-    <tr>
-      <td>25</td>
-      <td>09:30 - 09:50</td>
-      <td>LAU YI LIN</td>
-    </tr>
-    <tr>
-      <td>26</td>
-      <td>10:10 - 10:30</td>
-      <td>MOHAMED IGSHAN BIN MOHAMED ALFIN</td>
-    </tr>
-    <tr>
-      <td>27</td>
-      <td>10:30 - 10:50</td>
-      <td>MUHAMMAD KHAIRIN BIN MOHD NOR</td>
-    </tr>
-    <tr>
-      <td>28</td>
-      <td>09:50 - 10:10</td>
-      <td>LEE JIAN YANG, DESMOND</td>
-    </tr>
-    <tr>
-      <td>29</td>
-      <td>11:30 - 11:50</td>
-      <td>YONG KAI JIE</td>
-    </tr>
-  </tbody>
+<h2>Poster Schedule</h2>
+<table border="1" class="dataframe data-table" id="posterTable">
+<thead>
+<tr style="text-align: right;">
+<th>Poster Position</th>
+<th>Timeslot</th>
+<th>Student</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>09:30 - 09:50</td>
+<td>JACKSON LIM</td>
+</tr>
+<tr>
+<td>2</td>
+<td>09:50 - 10:10</td>
+<td>MUHAMMAD AFIQ BIN SAMSUDIN</td>
+</tr>
+<tr>
+<td>3</td>
+<td>10:10 - 10:30</td>
+<td>ONG LEE XUAN</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10:30 - 10:50</td>
+<td>TOH KE HAN</td>
+</tr>
+<tr>
+<td>5</td>
+<td>10:50 - 11:10</td>
+<td>PANG JIA CHENG</td>
+</tr>
+<tr>
+<td>6</td>
+<td>09:30 - 09:50</td>
+<td>KEVIN TAN TINGFENG</td>
+</tr>
+<tr>
+<td>7</td>
+<td>09:50 - 10:10</td>
+<td>MOK WEI EN, JABEZ</td>
+</tr>
+<tr>
+<td>8</td>
+<td>10:10 - 10:30</td>
+<td>TAN RI CHEE</td>
+</tr>
+<tr>
+<td>9</td>
+<td>10:30 - 10:50</td>
+<td>LIM JING RONG REUBEN</td>
+</tr>
+<tr>
+<td>10</td>
+<td>11:10 - 11:30</td>
+<td>WONG SEBASTIAN</td>
+</tr>
+<tr>
+<td>11</td>
+<td>09:30 - 09:50</td>
+<td>LEE RAY HAO</td>
+</tr>
+<tr>
+<td>12</td>
+<td>09:50 - 10:10</td>
+<td>LESHAWN CHAN KHIN MING</td>
+</tr>
+<tr>
+<td>13</td>
+<td>10:30 - 10:50</td>
+<td>RUCHEL LEE WEN XUAN</td>
+</tr>
+<tr>
+<td>14</td>
+<td>10:10 - 10:30</td>
+<td>PRAVEEN KUMAR S/O A JEYARAMAS</td>
+</tr>
+<tr>
+<td>15</td>
+<td>10:50 - 11:10</td>
+<td>TRISTAN RAJ SHANKAR</td>
+</tr>
+<tr>
+<td>24</td>
+<td>11:10 - 11:30</td>
+<td>TAY BOON KAI</td>
+</tr>
+<tr>
+<td>17</td>
+<td>09:50 - 10:10</td>
+<td>JUSTIN CHONG</td>
+</tr>
+<tr>
+<td>18</td>
+<td>10:10 - 10:30</td>
+<td>K MOHAMED SHARAAFAT</td>
+</tr>
+<tr>
+<td>19</td>
+<td>09:30 - 09:50</td>
+<td>GOO JIA MING TRISTAN PAUL</td>
+</tr>
+<tr>
+<td>20</td>
+<td>10:10 - 10:30</td>
+<td>SHANNON NG SHAO HUNG</td>
+</tr>
+<tr>
+<td>21</td>
+<td>09:30 - 09:50</td>
+<td>AXEL GOH</td>
+</tr>
+<tr>
+<td>22</td>
+<td>09:50 - 10:10</td>
+<td>JEFFREY MAK CHEE HONG</td>
+</tr>
+<tr>
+<td>23</td>
+<td>10:50 - 11:10</td>
+<td>TOH SHI XUAN</td>
+</tr>
+<tr>
+<td>16</td>
+<td>11:30 - 11:50</td>
+<td>ZHANG HUAHUA</td>
+</tr>
+<tr>
+<td>25</td>
+<td>09:30 - 09:50</td>
+<td>LAU YI LIN</td>
+</tr>
+<tr>
+<td>26</td>
+<td>10:10 - 10:30</td>
+<td>MOHAMED IGSHAN BIN MOHAMED ALFIN</td>
+</tr>
+<tr>
+<td>27</td>
+<td>10:30 - 10:50</td>
+<td>MUHAMMAD KHAIRIN BIN MOHD NOR</td>
+</tr>
+<tr>
+<td>28</td>
+<td>09:50 - 10:10</td>
+<td>LEE JIAN YANG, DESMOND</td>
+</tr>
+<tr>
+<td>29</td>
+<td>11:30 - 11:50</td>
+<td>YONG KAI JIE</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <div class="tab-content">
-    <h2>Poster Layout</h2>
-    <img src="layout.jpg" class="layout" alt="Poster Layout Map" />
+<h2>Poster Layout</h2>
+<img alt="Poster Layout Map" class="layout" src="layout.jpg"/>
 </div>
-
 <div class="tab-content">
-    <h2>BAC (Fintech) IWSP Poster Day 2025</h2>
-
-    <h3>Industry Supervisor Assessment</h3>
-    <p>
-      Please submit your assessment at:<br>
-      <a href="https://iwsp-assessment.singaporetech.edu.sg/" target="_blank">
+<h2>BAC (Fintech) IWSP Poster Day 2025</h2>
+<h3>Industry Supervisor Assessment</h3>
+<p>
+      Please submit your assessment at:<br/>
+<a href="https://iwsp-assessment.singaporetech.edu.sg/" target="_blank">
         https://iwsp-assessment.singaporetech.edu.sg/
       </a>
-    </p>
-    <img src="industrymarks.png" alt="Industry Supervisor QR" style="max-width:400px; display:block; margin-bottom:30px;" />
-
-    <h3>Academic Supervisor Assessment</h3>
-    <p>
-      Please submit your assessment at:<br>
-      <a href="https://forms.office.com/r/y3mBT09Gy9" target="_blank">
+</p>
+<img alt="Industry Supervisor QR" src="industrymarks.png" style="max-width:400px; display:block; margin-bottom:30px;"/>
+<h3>Academic Supervisor Assessment</h3>
+<p>
+      Please submit your assessment at:<br/>
+<a href="https://forms.office.com/r/y3mBT09Gy9" target="_blank">
         https://forms.office.com/r/y3mBT09Gy9
       </a>
-    </p>
-    <img src="acadmarks.png" alt="Academic Supervisor QR" style="max-width:400px; display:block;" />
+</p>
+<img alt="Academic Supervisor QR" src="acadmarks.png" style="max-width:400px; display:block;"/>
 </div>
-
 <div class="tab-content">
-    <h2>Feedback</h2>
-    <p>Please provide your name and feedback below. Submissions will be sent directly to the organiser.</p>
-    <form action="https://formsubmit.co/purnimamohan50@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="IWSP Supervisor Feedback Submission">
-        <input type="hidden" name="_template" value="table">
+<h2>Find My Way</h2>
+<p>Refer to the Campus finder link below.</p>
+<ul>
+<li>📍 Location: Ho Bee Auditorium @ SIT (Level 3)</li>
+<a href="https://www.singaporetech.edu.sg/campus-wayfinder" target="_blank">
+        https://www.singaporetech.edu.sg/campus-wayfinder
+      </a></li>
+<img alt="Ho Bee Auditorium Escalator (Level 3)" src="hobee.jpg" style="max-width:400px; display:block; margin-bottom:30px;"/>
 
-        <label for="name">Your Name:</label><br>
-        <input type="text" id="name" name="name" style="width: 100%; padding: 8px; margin-bottom: 10px;" required><br>
-
-        <label for="feedback">Your Feedback:</label><br>
-        <textarea id="feedback" name="feedback" rows="6" style="width: 100%; padding: 8px;" required></textarea><br><br>
-
-        <input type="submit" value="Submit Feedback" style="padding: 10px 20px;">
-    </form>
+</ul>
 </div>
-
-    </div>
+</div>
 </body>
 </html>
